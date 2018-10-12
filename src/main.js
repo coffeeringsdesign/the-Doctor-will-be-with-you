@@ -8,6 +8,7 @@ $(document).ready(function() {
   //   const symptom = $("#medicalIssueInput").val();
   //   $("#medicalIssueInput").val("");
   $("#userSearch").submit(function() {
+    event.preventDefault();
     const doctorName = $("#doctorNameInput").val();
     $("#doctorNameInput").val("");
     console.log(doctorName);
