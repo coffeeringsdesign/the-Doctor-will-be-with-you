@@ -8,29 +8,33 @@
 <body>
   <div class="container">
     <h1>The Doctor will be with You Shortly</h1>
-    <form id="userSearch" action="index.html" method="post">
+    <form id="nameSearch" action="index.html" method="post">
       <div class="form-group">
         <label for="doctorNameInput">Please enter a Doctors name:</label>
         <input type="text" class="form-control" id="doctorNameInput" placeholder="Mancini, Smith...">
         <button id="userDoctorNameSubmit" type="submit" name="button">Submit</button>
-
-
-        <!-- <div class="form-group">
-        <label for="medicalIssueInput">Please enter your symptoms:</label>
-        <input type="text" class="form-control" id="medicalIssueInput" placeholder="cough...">
-        <button id="userMedicalIssueSubmit" type="submit" name="button">Submit</button>
-      </div> -->
       </div>
-      <div class="errorDisplay">
+    </form>
 
+      <h5>or...</h5>
+
+    <form id="symptomSearch" action="index.html" method="post">
+      <div class="form-group">
+        <label for="symptomInput">Please enter a symptom:</label>
+        <input type="text" class="form-control" id="symptomInput" placeholder="cough...">
+        <button id="userSymptomSubmit" type="submit" name="button">Submit</button>
       </div>
+    </form>
+
+
       <div class="resultsDisplay">
         <div id="doctors">
           <h4>Doctors that match your search:</h4>
-          <div id="doctorNameDisplay">
+          <div id="doctorCardDisplay">
 
           </div>
-
+          <div class="errorDisplay">
+          </div>
         </div>
       </div>
     </form>
