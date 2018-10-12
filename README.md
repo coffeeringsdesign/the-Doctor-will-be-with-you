@@ -1,4 +1,4 @@
-# The Doctor will be with You
+# The Doctor will be with You Shortly
 
 #### By Kendra Kelly
 
@@ -19,6 +19,8 @@ This project is to build a User Interface that allows a visitor to search throug
 | A visitor enters a medical issue and gets back a list of Doctors | Enters: "Cough" | Dr. Mancini |
 | A visitor enters a name and gets back a list of Doctors | Enters: "Mancini" | Dr. Mancini |
 | If a result is returned they should get back this info about the Doctor: Full Name, Address, Phone Number, Website, New Patient Status | Enters: "Cough" | Dr. Michael Mancini, 1432 Melrose Place Dr, 423-242-3435, www.MelroseManor.com, Accepting New Patients |
+| If the API call results in an error they get a notification of an error | Enters: "Mancini" | Error: Broken! |
+| If the search doesn't result in any Doctors they get back a notification saying so | Enters: "Mancini" | We are sorry there are no Dr. Mancini's here |
 
 ## Setup/Installation Requirements
 Using Command Line:

@@ -4,5 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  console.log("hey, you should buy Abe a beer sometime!");
+  // $("#userSearch").submit(function() {
+  //   const symptom = $("#medicalIssueInput").val();
+  //   $("#medicalIssueInput").val("");
+  $("#userSearch").submit(function() {
+    const doctorName = $("#doctorNameInput").val();
+    $("#doctorNameInput").val("");
+
+    const promise = new Promise(function(resolve, reject) {
+      const request = new XMLHttpRequest();
+      const url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+      request.onload = function() {
+        if (this.status === 200) {
+          resolve(request.response);
+        }
+      }
+    })
+  })
 });
