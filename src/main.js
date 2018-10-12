@@ -9,6 +9,8 @@ $(document).ready(function() {
   //   $("#medicalIssueInput").val("");
   $("#userSearch").submit(function() {
     event.preventDefault();
+
+
     const doctorName = $("#doctorNameInput").val();
     $("#doctorNameInput").val("");
 
@@ -20,13 +22,17 @@ $(document).ready(function() {
       console.log(body);
       if (body.length === 0) {
         $("#errorDisplay").text("We are very sorry but there are no Doctors that meets that criteria");
+      } else {
+        for(let i = )
       }
       $("#doctorNameDisplay").text(`Dr. ${body.data[0].profile.first_name} ${body.data[0].profile.last_name}
       Accepting New Patients: ${body.data[0].practices[0].accepts_new_patients}
       Address: ${body.data[0].practices[0].visit_address.street},  ${body.data[0].practices[0].visit_address.street2}, ${body.data[0].practices[0].visit_address.city}, ${body.data[0].practices[0].visit_address.state}, ${body.data[0].practices[0].visit_address.zip}
       Phone: ${body.data[0].practices[0].phones[0].number},
       ${body.data[0].practices[0].phones[0].type},
+      Website: ${body.data[0].practices[0].website}
       Biography: ${body.data[0].profile.bio}`);
+
 
 
 
