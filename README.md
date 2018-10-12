@@ -24,10 +24,10 @@ This project is to build a User Interface that allows a visitor to search throug
 
 ## Setup/Installation Requirements
 Using Command Line:
-1. ``git clone https://github.com/coffeeringsdesign/Super-Galactic-Age-Calculator.git `` to clone the site.
+1. ``git clone https://github.com/coffeeringsdesign/the-Doctor-will-be-with-you.git `` to clone the site.
 2. ``cd ~`` to navigate to base directory
 3. ``cd Desktop `` to navigate to your desktop
-4. ``cd Super-Galactic-Age-Calculator`` to enter the site folder
+4. ``cd the-Doctor-will-be-with-you`` to enter the site folder
 5. ``npm init -y`` to initialize node
 6. ``npm install`` to install all webpack dependencies
 7. ``npm run start`` this will webpack and immediate pop open the site on your brower. I recommend Chrome.
