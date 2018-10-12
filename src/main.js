@@ -6,28 +6,21 @@ import './sass/styles.scss';
 
 
 $(document).ready(function() {
-  // $("#userSearch").submit(function() {
-  //   const symptom = $("#medicalIssueInput").val();
-  //   $("#medicalIssueInput").val("");
-
-
-    // const symptom = $("#symptomInput").val();
-    // $("#symptomInput").val("");
-    // console.log("doctorName");
-
-  //   const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&query=${symptom}`;
-  // });
-
-  $("#nameSearch").submit(function() {
+  $("#userSearch").submit(function() {
+    $("#doctors").show();
     event.preventDefault();
     const doctorName = $("#doctorNameInput").val();
     $("#doctorNameInput").val("");
 
     const symptom = $("#symptomInput").val();
     $("#symptomInput").val("");
-    console.log("doctorName");
+    let searchURL;
 
-    const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&name=${doctorName}`;
+    if (doctorName === "") {
+      searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&query=${symptom}`;
+    } else if (symptom === "") {
+      searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&name=${doctorName}`;
+    }
 
     const doctorResult = new Doctor();
 
@@ -87,24 +80,30 @@ $(document).ready(function() {
             biography = "currently unavailable";
           } else {
             biography = body.data[i].profile.bio;
-            console.log(biography, website, phone, acceptsNewPatients, street, street2, city, state, zip, doctorName);
           }
 
 
           $("#doctorCardDisplay").append(`<div class='card showDoctor' style='width: 18rem;' 'id=doctor${i}'>
           <div class='card-body'>
-          <h5 class='card-title'>${doctorName}<h5>
+          <h4 class='card-title'>${doctorName}<h4>
           <h5>Address:</h5>
           <h6>${street}</h6>
           <h6>${street2}</h6>
           <h6>${city}, ${state} ${zip}</h6>
-          <h6>Phone: ${phone}</h6>
-          <h6>Is accepting new patients: ${acceptsNewPatients}</h6>
-          <h6>Website: ${website}</h6>
+          <h6 class="break">Phone: ${phone}</h6>
+          <h6 class="break">Is accepting new patients: ${acceptsNewPatients}</h6>
+          <h6 class="break">Website: ${website}</h6>
+          <button id="showBiography">Biography</button>
+          <div id="biography">
           <p>${biography}</p>
           </div>
           </div>
+          </div>
           `);
+
+          $("#showBiography").click(function() {
+            $("#biography").show();
+          });
         }
       }
 
