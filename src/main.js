@@ -2,7 +2,6 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Doctor from './doctor.js';
-import DoctorInfo from './doctorInfo.js';
 import './sass/styles.scss';
 
 
@@ -11,20 +10,24 @@ $(document).ready(function() {
   //   const symptom = $("#medicalIssueInput").val();
   //   $("#medicalIssueInput").val("");
 
-  $("#symptomSearch").submit(function() {
-    event.preventDefault();
-    const symptom = $("#symptomInput").val();
-    $("#symptomInput").val("");
 
-    const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&query=${symptom}`
-  });
+    // const symptom = $("#symptomInput").val();
+    // $("#symptomInput").val("");
+    // console.log("doctorName");
+
+  //   const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&query=${symptom}`;
+  // });
 
   $("#nameSearch").submit(function() {
     event.preventDefault();
     const doctorName = $("#doctorNameInput").val();
     $("#doctorNameInput").val("");
 
-    const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&name=${doctorName}`
+    const symptom = $("#symptomInput").val();
+    $("#symptomInput").val("");
+    console.log("doctorName");
+
+    const searchURL = `https://api.betterdoctor.com/2016-03-01/doctors?&user_location=45.521586, -122.673244&limit=100&user_key=${process.env.exports.apiKey}&name=${doctorName}`;
 
     const doctorResult = new Doctor();
 
