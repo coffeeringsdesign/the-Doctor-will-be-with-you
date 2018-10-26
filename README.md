@@ -1,3 +1,5 @@
+![Kendra Kelly Logo](/kkgithub.png)
+
 # The Doctor will be with You Shortly
 
 #### By Kendra Kelly
@@ -24,7 +26,7 @@ This project is to build a User Interface that allows a visitor to search throug
 
 ## Setup/Installation Requirements
 Using Command Line:
-1. ``git clone https://github.com/coffeeringsdesign/the-Doctor-will-be-with-you.git `` to clone the site.
+1. ``git clone https://github.com/coffeeringsdesign/the-doctor-will-be-with-you-shortly.git `` to clone the site.
 2. ``cd ~`` to navigate to base directory
 3. ``cd Desktop `` to navigate to your desktop
 4. ``cd the-Doctor-will-be-with-you`` to enter the site folder
